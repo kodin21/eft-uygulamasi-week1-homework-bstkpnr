@@ -13,17 +13,18 @@
     />
   </head>
   <body>
-    <div id="container" class="text-center">
-      <h2>EFT UYGULAMA</h2>
-       <div class=""> <span id="time" class=" p-2 mb-2 bg-danger text-white rounded">minutes!</span></div>
+    <div id="container" class="text-center container shadow p-3 mb-5 bg-white rounded ">
+
+        <h2 class="p-3 mb-3 bg-secondary text-white rounded ">EFT UYGULAMA</h2>
+       <div class="mt-2"> <span id="time" class=" p-2 bg-danger text-white rounded">minutes!</span></div>
 
        <div class="input-group-lg mb-3 w-51 mt-5" id="main">
         <select class="form-select" id="bankAccount">
           <option selected="selected" class="dropdown-toggle">Hesap Seçiniz</option>
       </div>
-      <form class="container text-center " >
-         <div class="justify-content-center  ">
-           <div class="col-sm-3 my-1 justify-content-center ">
+      <form class=" justify-content-center" >
+         <div class="row  justify-content-center">
+           <div class=" my-2  ">
 
              <label class="sr-only" for="inlineFormInputGroupUsername">TR</label>
             <div class=" input-group ">
@@ -42,11 +43,10 @@
             </div>
         </div>
       </form>
-      <label class="label label-position badge badge-white text-wrap text-muted ">Miktar giriniz :</label> 
-      <input class="form rounded" id="labelMoney" type="number">
+      <input class="form rounded mb-2" id="labelMoney" type="number" placeholder="Miktar Giriniz">
 
       <div class="button">
-        <button type="button" class="btn btn-success" id="sendAccount">
+        <button type="button" class="btn btn-success" id="sendAccount" disabled>
           Gönder
         </button>
       </div>

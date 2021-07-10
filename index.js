@@ -14,8 +14,9 @@ const accounts = [
     balance: 10594,
   },
 ];
-let sendMoney = 0;
-let balance = 0;
+let sendMoney =document.querySelector('#aliciIban');
+
+
 var dropdown = document.getElementById("bankAccount");
  dropdown && accounts.forEach(function (e) {
   var account_number = `Hesap No: ${e.iban} - Bakiye: ${e.balance} £`;
@@ -26,12 +27,15 @@ var dropdown = document.getElementById("bankAccount");
 });
 
 function activeButton() {
-  if (sendMoney && balance) {
+  if (sendMoney) {
     document.getElementById("sendAccount").disabled = false;
-  } else {
-    document.getElementById("sendAccount").diabled = true;
+  } else if (!sendMoney){
+    document.getElementById("sendAccount").disabled = true;
   }
 }
+
+activeButton();
+//timer
 let interval;
 function startTimer(duration, display) {
   let start = Date.now(),
@@ -65,6 +69,7 @@ window.onload = function (display) {
   startTimer(twoMinutes, display);
 };
 
+//Banka onay
 let sendAccount=document.getElementById('sendAccount');
 sendAccount && sendAccount.addEventListener('click',function () {
  const moneyAlert = document.getElementById("labelMoney").value;
