@@ -15,23 +15,35 @@
   <body>
     <div id="container" class="text-center">
       <h2>EFT UYGULAMA</h2>
-       <!-- <div class="">UYARI <span id="time" class="border border-danger">minutes!</span></div> -->
+       <div class=""> <span id="time" class=" p-2 mb-2 bg-danger text-white rounded">minutes!</span></div>
 
        <div class="input-group-lg mb-3 w-51 mt-5" id="main">
         <select class="form-select" id="bankAccount">
-          <option selected="selected">Hesap Seçiniz</option>
+          <option selected="selected" class="dropdown-toggle">Hesap Seçiniz</option>
       </div>
-      <div class="input-group mb-3 text-center">
-        <span class="input-group-text" id="basic-addon1">TR</span>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Iban"
-          id="aliciIban"
-          onkeypress="return onlyNumberKey(event)"
-          maxlength="24"
-        />
-      </div>
+      <form class="container text-center " >
+         <div class="justify-content-center  ">
+           <div class="col-sm-3 my-1 justify-content-center ">
+
+             <label class="sr-only" for="inlineFormInputGroupUsername">TR</label>
+            <div class=" input-group ">
+              <div class="input-group-prepend">
+                <div class="input-group-text">TR</div>
+
+              </div>
+                <input
+                type="text"
+                class="form-control"
+                placeholder="Iban"
+                id="aliciIban"
+                onkeypress="return onlyNumberKey(event)"
+                maxlength="24"
+                />
+            </div>
+        </div>
+      </form>
+      <label class="label label-position badge badge-white text-wrap text-muted ">Miktar giriniz :</label> 
+      <input class="form rounded" id="labelMoney" type="number">
 
       <div class="button">
         <button type="button" class="btn btn-success" id="sendAccount">
@@ -40,7 +52,7 @@
       </div>
     </div>
 
-    <script src="index.js"></script>
+    <script src="index.js" type="module"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

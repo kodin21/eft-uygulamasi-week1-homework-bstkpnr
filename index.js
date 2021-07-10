@@ -1,10 +1,5 @@
-// import { name } from './example-other-file';
-
-
-// console.log('Javascriptinizi buraya yazabilirsiniz')
-
-// // Baska dosyadan calistirmak mumkun, dosyalari parcalamaktan korkmayin!
-// // name
+import {user} from './user_information.js';
+console.log(user)
 const accounts = [
   {
     iban: "trxx yyyy xxxx yyyy",
@@ -56,7 +51,7 @@ function startTimer(duration, display) {
 
     if (minutes == 0 && seconds == 0) {
       clearInterval(interval);
-      alert("SÜRE BİTTİ ");
+      alert("Oturumunuz sonlanmıştır");
       setTimeout(function(){
         location.href='index.html'
       },1000);
@@ -64,32 +59,39 @@ function startTimer(duration, display) {
   }
   interval=setInterval(timer, 120);
 }
-window.onload = function () {
+window.onload = function (display) {
   var twoMinutes = 60 * 2;
-  display = document.querySelector("#time");
+  display && (display = document.querySelector("#time"));
   startTimer(twoMinutes, display);
 };
+
 let sendAccount=document.getElementById('sendAccount');
 sendAccount && sendAccount.addEventListener('click',function () {
-  document.querySelector('#aliciIban').value="";
-  setTimeout(function () {
-    location.href = "index2.html";
-    console.log("Basıldı", sendAccount);
-  });
-})
-  
+ const moneyAlert = document.getElementById("labelMoney").value;
+ document.querySelector('#aliciIban').value="";
+ 
+ if(moneyAlert!="" && moneyAlert<=500){
+   alert("İŞLEM BAŞARILI");
+   location.reload();
+ }else if (moneyAlert != "" && moneyAlert > 500) {
+  for (let i = 0; i< 3; i++) {
+    const bankPassword = prompt(
+      "Telefonunuza Gelen Şifreyi Giriniz",
+      "Buraya yazınız lütfen"
+    );
+    if (bankPassword == "1234") {
+      alert("Şifre Başarılı.");
+      location.reload();
 
-var counter = 0;
-function enter() {
-  var pasword = document.getElementById("sifre").value;
-
-  if (pasword.length == 4) {
-    if (pasword === "1234") {
-      alert("Başarılı");
-    }else
-        alert("ŞİFRE HATALI !!!");
-        return;
-      
+      break;
+    } else alert("Şifre Yanlış");
+    if (i == 2) {
+      alert("Hesabınız Bloke Oldu");
+      location.reload();
     }
   }
+}
+
+console.log("basıldı")
+});
 

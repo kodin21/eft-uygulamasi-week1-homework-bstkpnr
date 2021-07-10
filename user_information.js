@@ -1,4 +1,4 @@
-const accounts = [
+export const accounts = [
     {
         iban: 'trxx yyyy xxxx yyyy',
         balance: 100,
